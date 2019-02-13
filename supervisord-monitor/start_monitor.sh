@@ -1,7 +1,8 @@
-#!/bin/bash -e
+#!/bin/bash
+#supervisord
 
-j2 supervisord.php.j2 > ./application/config/supervisor.php
-j2 welcome.php.j2 > ./application/views/welcome.php
+j2 /apps/supervisord-monitor/supervisord.php.j2 > /apps/supervisord-monitor/application/config/supervisor.php
+j2 /apps/supervisord-monitor/welcome.php.j2 > /apps/supervisord-monitor/application/views/welcome.php
 
-cd ./public_html
+cd /apps/supervisord-monitor/public_html
 php -S 0.0.0.0:80
